@@ -23,10 +23,6 @@ public abstract class Driver {
 
     public Integer getExperience() {
         return experience;
-
-        abstract String start();
-        abstract String stop();
-        abstract String refuel();
     }
 
     public abstract String start();

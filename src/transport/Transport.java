@@ -14,6 +14,7 @@ public abstract class Transport {
     }
 
     private String validateCarParameters(String model) {
+        return model;
     }
 
 
