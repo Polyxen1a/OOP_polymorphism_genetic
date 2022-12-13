@@ -6,11 +6,22 @@ package transport;
         private Integer maxSpeed;
         private Integer bestLapTime;
 
-        public Car(String brand, String model, Integer enginePower, Integer pitStopTime, Integer maxSpeed, Integer bestLapTime) {
+        private BodyType bodyType;
+
+        public Car(String brand, String model, Integer enginePower, Integer pitStopTime, Integer maxSpeed, Integer bestLapTime, BodyType bodyType) {
             super((brand), model, enginePower);
             this.pitStopTime = pitStopTime;
             this.maxSpeed = maxSpeed;
             this.bestLapTime = bestLapTime;
+            this.bodyType = bodyType;
+        }
+
+        public BodyType getBodyType() {
+            return bodyType;
+        }
+
+        public void setBodyType(BodyType bodyType) {
+            this.bodyType = bodyType;
         }
 
         @Override
@@ -21,6 +32,8 @@ package transport;
         void finish() {
             System.out.println("Машина финишировала");
         }
+
+
         @Override
         public void getPitStopTime() {
             System.out.println("pit-stop time is " + pitStopTime);
@@ -40,4 +53,13 @@ package transport;
         public void getBestLapTime() {
             System.out.println("best lap time is " + bestLapTime);
         }
-}
+
+        @Override
+        public void printType() {
+            if (bodyType == null) {
+                System.out.println("Данных по авто недостаточно");
+            } else {
+                System.out.println("Тип кузова авто: " + bodyType);
+            }
+        }
+    }

@@ -6,21 +6,35 @@ package transport;
         private final Integer maxSpeed;
         private final Integer bestLapTime;
 
+        private LoadCapacityTruck loadCapacityTruck;
+
         public Truck(String brand,
                      String model,
                      Integer enginePower,
                      Integer pitStopTime,
                      Integer maxSpeed,
-                     Integer bestLapTime) {
+                     Integer bestLapTime,
+                     LoadCapacityTruck loadCapacityTruck) {
             super(brand, model, enginePower);
             this.pitStopTime = pitStopTime;
             this.maxSpeed = maxSpeed;
             this.bestLapTime = bestLapTime;
+            this.loadCapacityTruck = loadCapacityTruck;
         }
+
+        public LoadCapacityTruck loadCapacityTruck() {
+            return loadCapacityTruck();
+        }
+
+        public void setLoadCapacityTruck(LoadCapacityTruck loadCapacityTruck) {
+            this.loadCapacityTruck = loadCapacityTruck;
+        }
+
         @Override
         void startToMove() {
             System.out.println("Грузовик стартовал");
         }
+
         @Override
         void finish() {
             System.out.println("Грузовик финишировал");
@@ -45,5 +59,13 @@ package transport;
             System.out.println("best lap time is " + bestLapTime);
         }
 
+        @Override
+        public void printType() {
+            if (loadCapacityTruck == null) {
+                System.out.println("Данных по авто недостаточно");
+            } else {
+                System.out.println("Грузоподъемность авто: " + loadCapacityTruck + " т.");
+            }
+        }
     }
 
