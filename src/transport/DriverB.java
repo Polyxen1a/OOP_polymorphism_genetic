@@ -1,7 +1,7 @@
 package transport;
 
 public class DriverB<T extends Car> extends Driver {
-    public DriverB(String name, Boolean hasLicense, Integer experience) {
+    public DriverB(String name, Boolean hasLicense, Integer experience) throws IllegalAccessException {
         super(name, hasLicense, experience);
     }
 

@@ -62,4 +62,9 @@ package transport;
                 System.out.println("Тип кузова авто: " + bodyType);
             }
         }
+
+        @Override
+        public boolean service() {
+            return Math.random() > 0.7;
+        }
     }

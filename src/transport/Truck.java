@@ -67,5 +67,10 @@ package transport;
                 System.out.println("Грузоподъемность авто: " + loadCapacityTruck + " т.");
             }
         }
+
+        @Override
+        public boolean service() {
+            return Math.random() > 0.75;
+        }
     }
 

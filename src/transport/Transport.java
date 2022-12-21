@@ -49,5 +49,7 @@ public abstract class Transport {
     public abstract void getBestLapTime();
 
     public abstract void printType();
+
+    public abstract boolean service();
 }
 
